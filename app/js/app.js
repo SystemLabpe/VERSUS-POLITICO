@@ -1,8 +1,8 @@
-define(["controllers/mainCtr","controllers/homeCtr",
-  "angularRoute"],function(){
+define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
+  "angularRoute","angularFire"],function(){
   'use strict';
 
-  var app = angular.module("app",['ngRoute','mainCtr']);
+  var app = angular.module("app",['ngRoute','firebase','mainCtr']);
 
   app.config(['$routeProvider',
     function($routeProvider){
@@ -10,6 +10,10 @@ define(["controllers/mainCtr","controllers/homeCtr",
       .when("/home",{
         templateUrl : "templates/home.html",
         controller  : "homeCtr"
+      })
+      .when("/firebase",{
+        templateUrl : "templates/firebase.html",
+        controller  : "firebaseCtr"
       })
       .otherwise({ redirectTo : "/home"});
     }]);
