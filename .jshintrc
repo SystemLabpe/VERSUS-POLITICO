@@ -7,7 +7,7 @@
   "latedef": true,
   "noarg": true,
   "undef": true,
-  "unused": true,
+  "unused": false,
   "strict": true,
   "jquery": true,
   "elision":false,
