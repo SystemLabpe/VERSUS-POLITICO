@@ -14,6 +14,9 @@ define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
       .when("/torneo",{
         templateUrl : "templates/tournament.html"
       })
+      .when("/versus",{
+        templateUrl : "templates/vs.html"
+      })
       .when("/firebase",{
         templateUrl : "templates/firebase.html",
         controller  : "firebaseCtr"
