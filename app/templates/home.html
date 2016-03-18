@@ -7,11 +7,11 @@
             <h2>Top VS pedidos</h2>
           </div>
           <ul>
-            <li class="row">
+            <li class="row" ng-repeat="(id,versus) in votingVersusList">
               <div class="col-md-5 candidate">
                 <img src="img/pp/accion-popular.png">
-                <span class="pp-name">Acción Popular</span>
-                <span class="candidate-name">Alfredo Barnechea</span>
+                <span class="pp-name">{{versus.pp1.name}}</span>
+                <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
               </div>
               <div class="col-md-2 versus">
                 <span class="vs">VS</span>
@@ -19,13 +19,11 @@
               </div>
               <div class="col-md-5 candidate">
                 <img src="img/pp/frente-amplio.png">
-                <span class="pp-name">Frente Amplio</span>
-                <span class="candidate-name">Veronika Mendoza</span>
+                <span class="pp-name">{{versus.pp1.name}}</span>
+                <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
               </div>
               <span class="col-md-12 votes-quantity">165154 votos</span>
             </li>
-            <li>Lorem ipsus</li>
-            <li>Lorem ipsus</li>
           </ul>
         </div>
       </article>

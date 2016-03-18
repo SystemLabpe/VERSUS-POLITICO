@@ -1,0 +1,82 @@
+@media (min-width: 480px) and (max-width: 768px) {
+  /* ==================================================
+    Tournament-Detail
+  ================================================== */
+  #tournament-detail .vs img {
+    max-width: 100%;
+  }
+
+  #tournament-detail .vs .candidate {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* ==================================================
+    Tournament-Detail
+  ================================================== */
+/*  #tournament-detail .vs img {
+    max-width: 100%;
+    display: inline-block;
+  }
+
+  #tournament-detail .vs .candidate {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  #tournament-detail .round-1 .vs,
+  #tournament-detail .round-2 .vs {
+    padding: 15px 0;
+    height: 90px;
+  }
+
+  #tournament-detail .round-3 .vs {
+    padding: 45px 0;
+    height: 180px;
+  }*/
+    /* ==================================================
+    Tournament-Detail
+  ================================================== */
+  #tournament-detail .vs img {
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  #tournament-detail .round-1 .vs,
+  #tournament-detail .round-2 .vs {
+    padding: 15px 0;
+    height: 80px;
+  }
+
+  #tournament-detail .round-3 .vs {
+    padding: 55px 0;
+    height: 160px;
+  }
+
+/*  #tournament-detail .round-3 .vs.last {
+    padding: 15px 0;
+    height: 80px;
+  }*/
+
+  #tournament-detail .round-4 .vs {
+    padding: 135px 0;
+    height: 320px;
+  }
+
+/*  #tournament-detail .round-4 .vs.last {
+    padding: 115px 0 0;
+    height: 240px;
+  }*/
+
+  #tournament-detail .round-5 .vs {
+    padding: 285px 0;
+    height: 640px;
+  }
+
+  #tournament-detail .vs .candidate {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
