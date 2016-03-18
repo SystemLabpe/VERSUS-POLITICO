@@ -11,6 +11,9 @@ define(["controllers/mainCtr","controllers/homeCtr",
         templateUrl : "templates/home.html",
         controller  : "homeCtr"
       })
+      .when("/torneo",{
+        templateUrl : "templates/tournament.html"
+      })
       .otherwise({ redirectTo : "/home"});
     }]);
   angular.bootstrap(document, ['app']);

@@ -16,6 +16,10 @@ ul {
   list-style-type: none;
 }
 
+section {
+  padding: 50px;
+}
+
 /* ==================================================
     Home
 ================================================== */
@@ -98,7 +102,7 @@ ul {
   margin: 20px auto 0;
 }
 
-#home .quantity-votes {
+#home .votes-quantity {
   text-align: center;
   margin-bottom: 10px;
 }
@@ -130,4 +134,107 @@ ul {
 
 #tournaments .tournament span {
   display: block;
+}
+
+/* ==================================================
+    Versus
+================================================== */
+#versus .vs {
+  margin-top: 20px;
+}
+
+#versus .vs .vs-row {
+  margin: 0;
+}
+
+#versus .vs .topic {
+  background-color: #34495E;
+  border-radius: 4px 4px 0 0;
+  padding: 4px;
+  text-align: center;
+}
+
+#versus .vs .topic-name {
+  color: #fffddd;
+}
+
+#versus .vs .candidate {
+  padding: 20px;
+  height: 240px;
+}
+
+#versus .vs .candidate img {
+  margin-bottom: 10px;
+}
+
+#versus .vs .candidate span {
+  display: block;
+  text-align: center;
+  color: #ffffff;
+}
+
+#versus .vs .candidate.winner {
+  background-color: #27AE60;
+  border-radius: 0 0 0 4px;
+}
+
+#versus .vs .candidate.loser {
+  background-color: #C0392B;
+  border-radius: 0 0 4px 0;
+  opacity: 0.6;
+}
+
+/* ==================================================
+    Tournament-Detail
+================================================== */
+#tournament-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+#tournament-detail .round {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width:200px;
+  list-style:none;
+  padding:0;
+}
+
+#tournament-detail .round .spacer {
+  flex-grow:1;
+}
+
+#tournament-detail .round .spacer:first-child,
+#tournament-detail .round .spacer:last-child {
+  flex-grow:.5;
+}
+
+#tournament-detail .round .game-spacer{
+  flex-grow:1;
+}
+
+#tournament-detail li.game {
+  padding-left:20px;
+}
+
+#tournament-detail li.game.winner {
+  font-weight:bold;
+}
+#tournament-detail li.game span {
+  float:right;
+  margin-right:5px;
+}
+
+#tournament-detail li.game-top {
+  border-bottom:1px solid #aaa;
+}
+
+#tournament-detail li.game-spacer {
+  border-right:1px solid #aaa;
+  min-height:40px;
+}
+
+#tournament-detail li.game-bottom {
+  border-top:1px solid #aaa;
 }
