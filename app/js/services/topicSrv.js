@@ -1,6 +1,6 @@
 define(["services/mainSrv"],function(mainSrv){
   'use strict';
-  var topicSrv = mainSrv.service('topicSrv',['syncData','$firebaseArray',function(syncData,$firebaseArray){
+  var topicSrv = mainSrv.service('topicSrv',['syncData','$q','$firebaseArray',function(syncData,$q,$firebaseArray){
     var mainRef = 'topic';
     var defered = $q.defer();
     var promise = defered.promise;
@@ -14,6 +14,7 @@ define(["services/mainSrv"],function(mainSrv){
           console.error("Error:", error);
           defered.reject(error);
         });
+        return promise;
       },
       getObject:function(args){
         syncData.getObject([mainRef,args]).$loaded()
@@ -24,6 +25,7 @@ define(["services/mainSrv"],function(mainSrv){
           console.error("Error:", error);
           defered.reject(error);
         });
+        return promise;
       },
       getVotingTopics:function(){
         var ref = syncData.getRef(mainRef);
@@ -36,6 +38,7 @@ define(["services/mainSrv"],function(mainSrv){
           console.error("Error:", error);
           defered.reject(error);
         });
+        return promise;
       }
     };
   }]);

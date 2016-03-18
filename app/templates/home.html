@@ -33,16 +33,14 @@
             <h2>Top temas pedidos </h2>
           </div>
           <ul>
-            <li class="row topic">
+            <li class="row topic" ng-repeat="(id,topic) in votingTopicsList">
               <div class="topic-name col-md-9">
-                <span>Lorem ipsus</span>
+                <span>{{topic.name}}</span>
               </div>
               <div class="topic-vote col-md-3">
                 <button class="btn btn-vote">Votar</button>
               </div>
             </li>
-            <li>Lorem ipsus</li>
-            <li>Lorem ipsus</li>
           </ul>
         </div>
       </article>
