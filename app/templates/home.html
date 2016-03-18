@@ -83,7 +83,7 @@
   <section id="versus">
     <h2>Versus</h2>
     <div class="row">
-      <article class="col-md-4 vs" ng-repeat="(id,versus) in versusList">
+      <article class="col-md-4 vs" ng-repeat="(id,versus) in versusList" ng-click="goVersusDetail(versus)">
         <div class="row vs-row">
           <div class="col-md-12 topic">
             <span class="topic-name">{{versus.topic.name}}</span>

@@ -1,8 +1,8 @@
 define(['controllers/mainCtr','services/versusSrv'], function(mainCtr){
   'use strict';
 
-  mainCtr.controller('homeCtr',['$scope','$timeout','versusSrv','topicSrv',
-    function ($scope,$timeout,versusSrv,topicSrv){
+  mainCtr.controller('homeCtr',['$scope','$location','versusSrv','topicSrv',
+    function ($scope,$location,versusSrv,topicSrv){
 
     // $scope.votingVersusList = versusSrv.getVotingVersus();
     versusSrv.getVersusByState("voting").then(function(data) {
@@ -28,6 +28,11 @@ define(['controllers/mainCtr','services/versusSrv'], function(mainCtr){
        inProcessVersusList = data;
        getfinishedVersusList();
     });
+
+    $scope.goVersusDetail = function(versus) {
+      sessionStorage.setItem('versus', JSON.stringify(versus));
+      $location.path('/versus');
+    };
 
   }]);
 
