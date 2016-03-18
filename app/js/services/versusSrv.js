@@ -26,9 +26,9 @@ define(["services/mainSrv"],function(mainSrv){
         });
         return promise;
       },
-      getVotingVersus:function(){
+      getVersusByState:function(state){
         var ref = syncData.getRef(mainRef);
-        var query = ref.orderByChild("state").equalTo("voting");
+        var query = ref.orderByChild("state").equalTo(state);
         $firebaseArray(query).$loaded()
         .then(function(data) {
           defered.resolve(data);

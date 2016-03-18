@@ -7,8 +7,8 @@ define(["controllers/mainCtr","services/versusSrv","services/topicSrv"], functio
     // topicSrv.getVotingTopics();
 
     // versusSrv
-    versusSrv.getVotingVersus();
-
+    // versusSrv.getVotingVersus();
+    console.log("-->",versusSrv.getVersus());
   }]);
 
 });
