@@ -1,4 +1,4 @@
-define(["controllers/mainCtr","controllers/homeCtr",
+define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
   "angularRoute"],function(){
   'use strict';
 
@@ -13,6 +13,10 @@ define(["controllers/mainCtr","controllers/homeCtr",
       })
       .when("/torneo",{
         templateUrl : "templates/tournament.html"
+      })
+      .when("/firebase",{
+        templateUrl : "templates/firebase.html",
+        controller  : "firebaseCtr"
       })
       .otherwise({ redirectTo : "/home"});
     }]);

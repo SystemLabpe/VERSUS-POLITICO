@@ -15,6 +15,7 @@
     "requirejs",
     "require",
     "define",
-    "angular"
+    "angular",
+    "Firebase"
   ]
 }

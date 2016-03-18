@@ -4,7 +4,9 @@ require.config({
     angularRoute    : '../lib/angular-route/angular-route.min',
     angularResource : '../lib/angular-resource/angular-resource.min',
     bootstrap       : '../lib/bootstrap/dist/js/bootstrap.min',
-    jquery          : '../lib/jquery/dist/jquery.min'
+    jquery          : '../lib/jquery/dist/jquery.min',
+    firebase        : '../lib/firebase/firebase',
+    angularFire     : '../lib/angularfire/dist/angularfire.min'
   },
   shim:  {
     angular :{
@@ -21,6 +23,12 @@ require.config({
     },
     bootstrap :{
       deps  :["jquery"]
+    },
+    firebase :{
+      exports :"firebase"
+    },
+    angularFire :{
+      deps  :["angular","firebase"]
     },
     app : {
       deps  :["angular"]
