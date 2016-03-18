@@ -13,15 +13,32 @@ define(['controllers/mainCtr','services/versusSrv'], function(mainCtr){
       $scope.votingTopicsList = data;
     });
 
-    versusSrv.getVotingVersus("inProcess").then(function(data) {
-      var inProcessVersusList = data;
-      var finishedVersusList;
-      versusSrv.getVotingVersus("finished").then(function(data) {
-        finishedVersusList = data;
-      });
-      $scope.versus = inProcessVersusList.concat(finishedVersusList);
+    // versusSrv.getVersusByState("inProcess").then(function(data) {
+    //   var inProcessVersusList = data;
+    //   var finishedVersusList;
+    //   versusSrv.getVersusByState("finished").then(function(data) {
+    //     finishedVersusList = data;
+    //   });
+    //   $scope.versusList = inProcessVersusList.concat(finishedVersusList);
+    // });
+    var inProcessVersusList = {};
+    $scope.versusList = [];
+
+    versusSrv.getVersusByState("inProcess").then(function(data) {
+       inProcessVersusList = data;
+       console.log('inProcessVersusList -> ', inProcessVersusList);
+       getaa();
     });
 
+    function getaa() {
+      var finishedVersusList;
+      versusSrv.getVersusByState("finished").then(function(data) {
+        finishedVersusList = data;
+        console.log('finishedVersusList -> ', finishedVersusList);
+        $scope.versusList = inProcessVersusList.concat(finishedVersusList);
+      });
+      console.log('----->' , $scope.versusList);
+    }
 
   }]);
 

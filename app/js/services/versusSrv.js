@@ -1,11 +1,14 @@
 define(["services/mainSrv"],function(mainSrv){
   'use strict';
   var versusSrv = mainSrv.service('versusSrv',['syncData','$q','$firebaseArray',function(syncData,$q,$firebaseArray){
-    var mainRef = 'versus';
-    var defered = $q.defer();
-    var promise = defered.promise;
+    // var mainRef = 'versus';
+    // var defered = $q.defer();
+    // var promise = defered.promise;
     return {
       getList:function(args){
+        var mainRef = 'versus';
+    var defered = $q.defer();
+    var promise = defered.promise;
         syncData.getList([mainRef,args]).$loaded()
         .then(function(data) {
           defered.resolve(data);
@@ -16,6 +19,9 @@ define(["services/mainSrv"],function(mainSrv){
         });
       },
       getObject:function(args){
+        var mainRef = 'versus';
+    var defered = $q.defer();
+    var promise = defered.promise;
         syncData.getObject([mainRef,args]).$loaded()
         .then(function(data) {
           defered.resolve(data);
@@ -27,6 +33,9 @@ define(["services/mainSrv"],function(mainSrv){
         return promise;
       },
       getVersusByState:function(state){
+        var mainRef = 'versus';
+    var defered = $q.defer();
+    var promise = defered.promise;
         var ref = syncData.getRef(mainRef);
         var query = ref.orderByChild("state").equalTo(state);
         $firebaseArray(query).$loaded()

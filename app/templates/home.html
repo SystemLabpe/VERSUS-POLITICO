@@ -83,43 +83,26 @@
   <section id="versus">
     <h2>Versus</h2>
     <div class="row">
-      <article class="col-md-4 vs">
+      <article class="col-md-4 vs" ng-repeat="(id,versus) in versusList">
         <div class="row vs-row">
           <div class="col-md-12 topic">
-            <span class="topic-name">Unión Civil</span>
+            <span class="topic-name">{{versus.topic.name}}</span>
           </div>
           <div class="col-md-6 candidate winner">
             <img src="img/pp/peruanos-por-el-cambio.png" class="img-responsive">
-            <span class="candidate-name">PPK</span>
-            <span class="pp-name">Peruanos por el Kambio</span>
-            <span class="votes-quantity">1325 votos</span>
+            <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
+            <span class="pp-name">{{versus.pp1.name}}</span>
+            <span class="votes-quantity">{{versus.pp1.votes}} votos</span>
           </div>
           <div class="col-md-6 candidate loser">
             <img src="img/pp/accion-popular.png" class="img-responsive">
-            <span class="candidate-name">Alfredo Barnechea</span>
-            <span class="pp-name">Acción Popular</span>
-            <span class="votes-quantity">869 votos</span>
+            <span class="candidate-name">{{versus.pp2.candidate_name}}</span>
+            <span class="pp-name">{{versus.pp2.name}}</span>
+            <span class="votes-quantity">{{versus.pp2.votes}} votos</span>
           </div>
         </div>
       </article>
-      <article class="col-md-4 vs">
-        <div class="row vs-row">
-          <div class="col-md-12 topic">
-            <span class="topic-name">Unión Civil</span>
-          </div>
-          <div class="col-md-6 candidate winner">
-            <img src="img/pp/peruanos-por-el-cambio.png" class="img-responsive">
-            <span class="candidate-name">PPK</span>
-            <span class="pp-name">Peruanos por el Kambio</span>
-          </div>
-          <div class="col-md-6 candidate loser">
-            <img src="img/pp/accion-popular.png" class="img-responsive">
-            <span class="candidate-name">Alfredo Barnechea</span>
-            <span class="pp-name">Acción Popular</span>
-          </div>
-        </div>
-      </article>
-      <article class="col-md-4 vs">
+      <!-- <article class="col-md-4 vs">
         <div class="row vs-row">
           <div class="col-md-12 topic">
             <span class="topic-name">Unión Civil</span>
@@ -135,8 +118,8 @@
             <span class="pp-name">Acción Popular</span>
           </div>
         </div>
-      </article>
-      <article class="col-md-4 vs">
+      </article> -->
+      <!-- <article class="col-md-4 vs">
         <div class="row vs-row">
           <div class="col-md-12 topic">
             <span class="topic-name">Unión Civil</span>
@@ -152,7 +135,24 @@
             <span class="pp-name">Acción Popular</span>
           </div>
         </div>
-      </article>
+      </article> -->
+<!--       <article class="col-md-4 vs">
+        <div class="row vs-row">
+          <div class="col-md-12 topic">
+            <span class="topic-name">Unión Civil</span>
+          </div>
+          <div class="col-md-6 candidate winner">
+            <img src="img/pp/peruanos-por-el-cambio.png" class="img-responsive">
+            <span class="candidate-name">PPK</span>
+            <span class="pp-name">Peruanos por el Kambio</span>
+          </div>
+          <div class="col-md-6 candidate loser">
+            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <span class="candidate-name">Alfredo Barnechea</span>
+            <span class="pp-name">Acción Popular</span>
+          </div>
+        </div>
+      </article> -->
     </div>
   </section>
 </div>
