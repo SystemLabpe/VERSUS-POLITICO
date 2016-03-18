@@ -1,5 +1,5 @@
-define(["services/mainSrv","services/fireBaseSrv"],function(){
+define(["services/mainSrv"],function(){
   'use strict';
-  var mainCtr = angular.module('mainCtr',['mainSrv','fireBaseSrv']);
+  var mainCtr = angular.module('mainCtr',['mainSrv']);
   return mainCtr;
 });

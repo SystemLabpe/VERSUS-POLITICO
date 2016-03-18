@@ -21,23 +21,31 @@ define(["angularFire","config"],function(){
      * @return a Firebase instance
      */
     return function(path) {
-       return new Firebase(pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
+      console.log("arguments",pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
+      return new Firebase(pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
     }
   }]);
 
-  fireBaseSrv.service('syncData', ['$firebaseArray', 'firebaseRef', function($firebaseArray, firebaseRef) {
-    /**
-     * @function
-     * @name syncData
-     * @param {String|Array...} path
-     * @param {int} [limit]
-     * @return a Firebase instance
-     */
-    return function(path) {
-       var ref = firebaseRef(path);
-       // limit && (ref = ref.limit(limit));
-       return $firebaseArray(ref);
+  fireBaseSrv.service('syncData', ['$firebaseArray', '$firebaseObject', 'firebaseRef', function($firebaseArray, $firebaseObject, firebaseRef) {
+    return {
+      getList:function(path){
+        var ref = firebaseRef(path);
+        return $firebaseArray(ref);
+      },
+      getObject:function(path){
+        var ref = firebaseRef(path);
+        return $firebaseObject(ref);
+      },
+      getRef:function(path){
+        return firebaseRef(path);
+      }
     };
+    // return function(path) {
+    //    var ref = firebaseRef(path);
+    //    var query = ref.orderByChild("state").equalTo("voting");
+    //    // limit && (ref = ref.limit(limit));
+    //    return $firebaseArray(query);
+    // };
   }]);
 
 
