@@ -1,1 +1,2 @@
 app/js/libs
+app/js/services/fireBaseSrv.js

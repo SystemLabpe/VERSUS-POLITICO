@@ -1,8 +1,8 @@
 define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
-  "angularRoute","angularFire"],function(){
+  "angularRoute"],function(){
   'use strict';
 
-  var app = angular.module("app",['ngRoute','firebase','mainCtr']);
+  var app = angular.module("app",['ngRoute','mainCtr']);
 
   app.config(['$routeProvider',
     function($routeProvider){
