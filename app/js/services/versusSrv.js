@@ -27,8 +27,6 @@ define(["services/mainSrv"],function(mainSrv){
         return promise;
       },
       getVotingVersus:function(){
-        var defered = $q.defer();
-        var promise = defered.promise;
         var ref = syncData.getRef(mainRef);
         var query = ref.orderByChild("state").equalTo("voting");
         $firebaseArray(query).$loaded()
