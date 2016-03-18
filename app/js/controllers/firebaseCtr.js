@@ -1,14 +1,13 @@
-define(['controllers/mainCtr'], function(mainCtr){
+define(["controllers/mainCtr","services/versusSrv","services/topicSrv"], function(mainCtr){
   'use strict';
 
-  mainCtr.controller('firebaseCtr',['$scope','syncData',function ($scope,syncData){
+  mainCtr.controller('firebaseCtr',['$scope','versusSrv','topicSrv',function ($scope,versusSrv,topicSrv){
 
+    // topicSrv
+    // topicSrv.getVotingTopics();
 
-    console.log("--->",syncData('Political_party'));
-
-
-
-
+    // versusSrv
+    versusSrv.getVotingVersus();
 
   }]);
 
