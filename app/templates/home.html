@@ -9,21 +9,21 @@
             </div>
             <ul>
               <li class="row" ng-repeat="(id,versus) in votingVersusList">
-                <div class="col-md-5 candidate">
+                <div class="col-md-5 col-xs-5 candidate">
                   <img ng-src="img/pp/{{versus.pp1.img}}">
                   <span class="pp-name">{{versus.pp1.name}}</span>
                   <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
                 </div>
-                <div class="col-md-2 versus">
+                <div class="col-md-2 col-xs-2 versus">
                   <span class="vs">VS</span>
                   <button class="btn btn-vote">Votar</button>
                 </div>
-                <div class="col-md-5 candidate">
+                <div class="col-md-5 col-xs-5 candidate">
                   <img ng-src="img/pp/{{versus.pp2.img}}">
                   <span class="pp-name">{{versus.pp2.name}}</span>
                   <span class="candidate-name">{{versus.pp2.candidate_name}}</span>
                 </div>
-                <span class="col-md-12 votes-quantity">{{versus.votes}} votos</span>
+                <span class="col-md-12 col-xs-12 votes-quantity">{{versus.votes}} votos</span>
               </li>
             </ul>
           </div>
@@ -35,10 +35,10 @@
             </div>
             <ul>
               <li class="row topic" ng-repeat="(id,topic) in votingTopicsList">
-                <div class="topic-name col-md-9">
+                <div class="topic-name col-md-9 col-xs-9">
                   <span>{{topic.name}}</span>
                 </div>
-                <div class="topic-vote col-md-3">
+                <div class="topic-vote col-md-3 col-xs-3">
                   <button class="btn btn-vote">Votar</button>
                   <span class="votes-quantity">{{topic.votes}}</span>
                 </div>
@@ -85,14 +85,14 @@
           <div class="col-md-12 topic">
             <span class="topic-name">{{versus.topic.name}}</span>
           </div>
-          <div class="col-md-6 candidate" ng-class="{'winner' : versus.pp1.winner}">
+          <div class="col-md-6 col-xs-6 candidate" ng-class="{'winner' : versus.pp1.winner}">
             <!-- <img src="img/pp/peruanos-por-el-cambio.png" class="img-responsive"> -->
             <img ng-src="img/pp/{{versus.pp1.img}}" class="img-responsive">
             <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
             <span class="pp-name">{{versus.pp1.name}}</span>
             <span class="votes-quantity">{{versus.pp1.votes}} votos</span>
           </div>
-          <div class="col-md-6 candidate" ng-class="{'winner' : versus.pp2.winner}">
+          <div class="col-md-6 col-xs-6 candidate" ng-class="{'winner' : versus.pp2.winner}">
             <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
             <img ng-src="img/pp/{{versus.pp2.img}}" class="img-responsive">
             <span class="candidate-name">{{versus.pp2.candidate_name}}</span>
