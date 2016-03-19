@@ -269,10 +269,50 @@ section {
   margin: 0 auto;
 }
 
+#tournament-detail .vs {
+  text-align: center;
+}
+
+#tournament-detail .vs .candidate.loser img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#tournament-detail .round .vs .versus {
+  font-weight: bold;
+}
+
 #tournament-detail .round-1 .vs,
 #tournament-detail .round-2 .vs {
   padding: 15px 0;
   height: 145px;
+}
+
+#tournament-detail .round .vs {
+  position: relative;
+}
+
+#tournament-detail .round-1 .vs .bracket {
+  position: absolute;
+  right: -20px;
+  top: 15px;
+}
+
+#tournament-detail .round-1 .vs .versus {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  text-align: center;
+}
+
+#tournament-detail .round-2 .vs .bracket {
+  position: absolute;
+  right: -20px;
+  top: 15px;
+  max-height: 264px;
 }
 
 #tournament-detail .round-3 .vs {
@@ -280,9 +320,22 @@ section {
   height: 290px;
 }
 
-#tournament-detail .round-3 .vs.last {
-  padding: 15px 0;
-  height: 145px;
+#tournament-detail .round-3 .vs .bracket {
+  position: absolute;
+  right: -40px;
+  top: 0;
+  max-height: 406px;
+}
+
+#tournament-detail .round-3 .vs .versus,
+#tournament-detail .round-4 .vs .versus {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
 }
 
 #tournament-detail .round-4 .vs {
@@ -290,19 +343,17 @@ section {
   height: 580px;
 }
 
-#tournament-detail .round-4 .vs.last {
-  padding: 195px 0 0;
-  height: 435px;
+#tournament-detail .round-4 .vs .bracket {
+  position: absolute;
+  right: -40px;
+  top: 0;
+  max-height: 696px;
 }
 
 #tournament-detail .round-5 .vs {
   padding: 503px 0;
   height: 1015px;
 }
-
-/*#tournament-detail .round-4 .vs.last {
-  padding: 15px 0 0;
-}*/
 
 /* ==================================================
     Versus-Detail

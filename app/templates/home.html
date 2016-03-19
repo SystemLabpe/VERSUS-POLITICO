@@ -19,8 +19,8 @@
               </div>
               <div class="col-md-5 candidate">
                 <img src="img/pp/frente-amplio.png">
-                <span class="pp-name">{{versus.pp1.name}}</span>
-                <span class="candidate-name">{{versus.pp1.candidate_name}}</span>
+                <span class="pp-name">{{versus.pp2.name}}</span>
+                <span class="candidate-name">{{versus.pp2.candidate_name}}</span>
               </div>
               <span class="col-md-12 votes-quantity">{{versus.votes}} votos</span>
             </li>
@@ -51,32 +51,23 @@
   </section>
   <section id="tournaments">
     <h2>Torneos</h2>
-    <div class="row">
-      <article class="tournament col-md-4 col-md-offset-4">
-        <img src="img/tournament-default.png">
-        <h3>En Carrera</h3>
-        <span>Del 10 Enero al 10 Febrero </span>
-        <span>Breve descripción</span>
-      </article>
-    </div>
-    <div class="row">
-      <div class="col-md-4 tournament">
-        <img src="img/pp/peruanos-por-el-cambio.png">
-        <h3>Peruanos por el Kambio</h3>
-        <span>Del 10 Enero al 10 Febrero </span>
-        <span>Breve descripción</span>
+    <div ng-repeat="(id,tournament) in tournamentsList">
+      <div class="row" ng-show="tournament.state == 'inProcess'">
+        <article class="tournament col-md-4 col-md-offset-4" ng-click="goTournamentDetail(tournament)">
+          <img src="img/tournament-default.png">
+          <h3>En Carrera</h3>
+          <span>Del {{tournament.init_date}} al {{tournament.end_date}} </span>
+          <span>{{torunament.detail}}</span>
+        </article>
       </div>
-      <div class="col-md-4 tournament">
-        <img src="img/pp/frente-amplio.png">
-        <h3>Frente Amplio</h3>
-        <span>Del 10 Enero al 10 Febrero </span>
-        <span>Breve descripción</span>
-      </div>
-      <div class="col-md-4 tournament">
-        <img src="img/pp/accion-popular.png">
-        <h3>Acción Popular</h3>
-        <span>Del 10 Enero al 10 Febrero </span>
-        <span>Breve descripción</span>
+      <div class="row">
+        <div class="col-md-4 tournament" ng-show="tournament.state != 'inProcess'" ng-click="goTournamentDetail(tournament)">
+          <img src="img/pp/peruanos-por-el-cambio.png">
+          <h3 ng-show="tournament.phase.ph15.pp1.winner == true">{{tournament.phase.ph15.pp1.name}}</h3>
+          <h3 ng-show="tournament.phase.ph15.pp2.winner == true">{{tournament.phase.ph15.pp2.name}}</h3>
+          <span>Del {{tournament.init_date}} al {{tournament.end_date}} </span>
+          <span>{{torunament.detail}}</span>
+        </div>
       </div>
     </div>
   </section>

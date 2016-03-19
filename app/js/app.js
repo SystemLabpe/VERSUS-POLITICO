@@ -1,5 +1,5 @@
 define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
-  "controllers/versusCtr","angularRoute"],function(){
+  "controllers/versusCtr","controllers/tournamentCtr","angularRoute"],function(){
   'use strict';
 
   var app = angular.module("app",['ngRoute','mainCtr']);
@@ -12,7 +12,8 @@ define(["controllers/mainCtr","controllers/homeCtr","controllers/firebaseCtr",
         controller  : "homeCtr"
       })
       .when("/torneo",{
-        templateUrl : "templates/tournament.html"
+        templateUrl : "templates/tournament.html",
+        controller  : "tournamentCtr"
       })
       .when("/versus",{
         templateUrl : "templates/vs.html",

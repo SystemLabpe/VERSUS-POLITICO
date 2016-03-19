@@ -5,7 +5,6 @@ define(['controllers/mainCtr'], function(mainCtr){
     function ($scope,$location){
 
       $scope.versus = JSON.parse(sessionStorage.getItem('versus'));
-      console.log('versus -> ', $scope.versus);
 
   }]);
 

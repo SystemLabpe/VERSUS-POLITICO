@@ -21,7 +21,7 @@ define(["angularFire","config"],function(){
      * @return a Firebase instance
      */
     return function(path) {
-      console.log("arguments",pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
+      // console.log("arguments",pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
       return new Firebase(pathRef([FBURL].concat(Array.prototype.slice.call(arguments))));
     }
   }]);
