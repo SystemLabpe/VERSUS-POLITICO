@@ -115,6 +115,12 @@ h2 {
   font-size: 1.2em;
 }
 
+#home .trends-versus ul .votes-quantity {
+  font-size: 1.2em;
+  color: #E74C3C;
+  margin-bottom: 5px;
+}
+
 #home .trends-versus ul {
   font-weight: bold;
 }
@@ -175,7 +181,12 @@ h2 {
 }
 
 #home .topic .topic-vote {
-  text-align: right;
+  text-align: center;
+}
+
+#home .topic-vote .votes-quantity {
+  font-size: 1.2em;
+  color: #F39C12;
 }
 
 /* ==================================================
