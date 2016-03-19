@@ -5,7 +5,12 @@ define(['controllers/mainCtr'], function(mainCtr){
     function ($scope,$location){
 
       $scope.tournament = JSON.parse(sessionStorage.getItem('tournament'));
-      console.log('asd',$scope.tournament);
+
+      $scope.goVersusDetail = function(versus) {
+        sessionStorage.setItem('versus', JSON.stringify(versus));
+        $location.path('/versus');
+      };
+
   }]);
 
 });

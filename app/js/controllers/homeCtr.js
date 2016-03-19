@@ -14,7 +14,6 @@ define(['controllers/mainCtr','services/versusSrv'], function(mainCtr){
 
     tournamentSrv.getList().then(function(data) {
       $scope.tournamentsList = data;
-      console.log('tournamentsList -> ', $scope.tournamentsList);
     });
 
     var inProcessVersusList = [];
@@ -25,6 +24,7 @@ define(['controllers/mainCtr','services/versusSrv'], function(mainCtr){
       versusSrv.getVersusByState("finished").then(function(data) {
         finishedVersusList = data;
         $scope.versusList = inProcessVersusList.concat(finishedVersusList);
+        console.log('versusList',$scope.versusList);
       });
     }
 

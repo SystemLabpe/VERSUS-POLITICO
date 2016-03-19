@@ -6,6 +6,10 @@ define(['controllers/mainCtr'], function(mainCtr){
 
       $scope.versus = JSON.parse(sessionStorage.getItem('versus'));
 
+      $scope.roundsList = [];
+
+      console.log('versus -> ', $scope.versus);
+
   }]);
 
 });

@@ -1,285 +1,206 @@
-<div class="container-fluid">
-  <section id="tournament-detail">
-<!--     <ul class="round round-1">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">
-        <img src="img/pp/accion-popular.png"> Lousville <span>79</span>
-      </li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">
-        <img src="img/pp/accion-popular.png">NC A&T <span>48</span>
-      </li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Colo St <span>84</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Missouri <span>72</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top ">Oklahoma St <span>55</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Oregon <span>68</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Saint Louis <span>64</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">New Mexico St <span>44</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Memphis <span>54</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">St Mary's <span>52</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Mich St <span>65</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Valparaiso <span>54</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Creighton <span>67</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Cincinnati <span>63</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Duke <span>73</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Albany <span>61</span></li>
-
-      <li class="spacer">&nbsp;</li>
-    </ul>
-    <ul class="round round-2">
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Lousville <span>82</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Colo St <span>56</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top winner">Oregon <span>74</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom ">Saint Louis <span>57</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top ">Memphis <span>48</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Mich St <span>70</span></li>
-
-      <li class="spacer">&nbsp;</li>
-
-      <li class="game game-top ">Creighton <span>50</span></li>
-      <li class="game game-spacer">&nbsp;</li>
-      <li class="game game-bottom winner">Duke <span>66</span></li>
-
-      <li class="spacer">&nbsp;</li>
-    </ul> -->
-    <div class="row">
+<section id="tournament-detail">
+  <div class="container-fluid">
+    <h2>Torneo <br> {{tournament.name}}</h2>
+    <span class="tournament-date">Del {{tournament.init_date}} al {{tournament.end_date}} </span>
+    <div class="row tournament-round">
       <div class="col-md-3 col-xs-4 round round-1">
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph1)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph1.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph1.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph1.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph1.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph1.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph1.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph2)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph2.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph2.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph2.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph2.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph2.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph2.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph3)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph3.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph3.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph3.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph3.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph3.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph3.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph4)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph4.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph4.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph4.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph4.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph4.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph4.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph5)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph5.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph5.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph5.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph5.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph5.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph5.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph6)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph6.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph6.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph6.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph6.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph6.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph6.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph7)">
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph7.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph7.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph7.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <div class="col-md-6 col-xs-6 candidate" ng-class="{'loser' : !tournament.phase.ph7.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph7.pp8.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph7.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
       </div>
       <div class="col-md-2 col-xs-2 round round-2">
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph8)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph8.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph8.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph8.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph8)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph8.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph8.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph8.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph9)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph9.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph9.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph9.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph9)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph9.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph9.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph9.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph10)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph10.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph10.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph10.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph10)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph10.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph10.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph10.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph11)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph11.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph11.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph11.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
           <img src="img/bracket.png" class="bracket">
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph11)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph11.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph11.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph11.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
       </div>
       <div class="col-md-2 col-xs-2 round round-3">
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph12)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph12.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph12.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph12.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
             <img src="img/bracket.png" class="bracket">
           </div>
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph12)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph12.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph12.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph12.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph13)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph13.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph13.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph13.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
             <img src="img/bracket.png" class="bracket">
           </div>
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph13)">
           <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph13.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph13.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+            <img ng-src="img/pp/{{tournament.phase.ph13.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
       </div>
       <div class="col-md-2 col-xs-2 round round-4">
-        <div class="row vs">
-          <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph14.pp1.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph14.pp1.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph15)">
+          <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph15.pp1.winner}">
+            <img ng-src="img/pp/{{tournament.phase.ph15.pp1.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
             <img src="img/bracket-lg.png" class="bracket">
           </div>
           <span class="versus">VS</span>
         </div>
-        <div class="row vs">
-          <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph14.pp2.winner}">
-            <!-- <img ng-src="img/pp/{{tournament.phase.ph14.pp2.img}}.png" class="img-responsive"> -->
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+        <div class="row vs" ng-click="goVersusDetail(tournament.phase.ph15)">
+          <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph15.pp2.winner}">
+            <img ng-src="img/pp/{{tournament.phase.ph15.pp2.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
       </div>
       <div class="col-md-2 col-xs-2 round round-5">
         <div class="row vs">
-          <div class="col-md-12 candidate" ng-class="{'loser' : !tournament.phase.ph14.pp2.winner}">
-            <img src="img/pp/accion-popular.png" class="img-responsive">
+          <div class="col-md-12 candidate">
+            <img ng-src="img/pp/{{tournament.ppWinner.img}}" class="img-responsive">
+            <!-- <img src="img/pp/accion-popular.png" class="img-responsive"> -->
           </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
