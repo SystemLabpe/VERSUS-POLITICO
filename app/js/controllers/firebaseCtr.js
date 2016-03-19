@@ -1,14 +1,18 @@
-define(["controllers/mainCtr","services/versusSrv","services/topicSrv"], function(mainCtr){
+define(["controllers/mainCtr","services/versusSrv","services/topicSrv","services/tournamentSrv"], function(mainCtr){
   'use strict';
 
-  mainCtr.controller('firebaseCtr',['$scope','versusSrv','topicSrv',function ($scope,versusSrv,topicSrv){
+  mainCtr.controller('firebaseCtr',['$scope','versusSrv','topicSrv','tournamentSrv',
+    function ($scope,versusSrv,topicSrv,tournamentSrv){
 
     // topicSrv
     // topicSrv.getVotingTopics();
 
     // versusSrv
     // versusSrv.getVotingVersus();
-    console.log("-->",versusSrv.getVersus());
+
+    //tournamentSrv
+    //tournamentSrv.getList();
+    console.log("-->",tournamentSrv.getList());
   }]);
 
 });

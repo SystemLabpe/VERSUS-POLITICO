@@ -1,9 +1,9 @@
 define(["services/mainSrv"],function(mainSrv){
   'use strict';
-  var topicSrv = mainSrv.service('topicSrv',['syncData','$q','$firebaseArray',function(syncData,$q,$firebaseArray){
+  var tournamentSrv = mainSrv.service('tournamentSrv',['syncData','$q','$firebaseArray',function(syncData,$q,$firebaseArray){
     return {
       getList:function(args){
-        var mainRef = 'topic';
+        var mainRef = 'tournament';
         var defered = $q.defer();
         var promise = defered.promise;
         syncData.getList([mainRef,args]).$loaded()
@@ -17,7 +17,7 @@ define(["services/mainSrv"],function(mainSrv){
         return promise;
       },
       getObject:function(args){
-        var mainRef = 'topic';
+        var mainRef = 'tournament';
         var defered = $q.defer();
         var promise = defered.promise;
         syncData.getObject([mainRef,args]).$loaded()
@@ -30,12 +30,12 @@ define(["services/mainSrv"],function(mainSrv){
         });
         return promise;
       },
-      getVotingTopics:function(){
-        var mainRef = 'topic';
+      getTournamentByState:function(state){
+        var mainRef = 'tournament';
         var defered = $q.defer();
         var promise = defered.promise;
         var ref = syncData.getRef(mainRef);
-        var query = ref.orderByChild("state").equalTo("voting");
+        var query = ref.orderByChild("state").equalTo(state);
         $firebaseArray(query).$loaded()
         .then(function(data) {
           defered.resolve(data);
@@ -50,5 +50,6 @@ define(["services/mainSrv"],function(mainSrv){
   }]);
 
 
-  return topicSrv;
+
+  return tournamentSrv;
 });

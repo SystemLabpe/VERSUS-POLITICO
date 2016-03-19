@@ -14,6 +14,7 @@ define(["services/mainSrv"],function(mainSrv){
           console.error("Error:", error);
           defered.reject(error);
         });
+        return promise;
       },
       getObject:function(args){
         var mainRef = 'versus';
